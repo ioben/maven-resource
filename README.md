@@ -103,6 +103,8 @@ jobs:
     params:
       file: task-output/example-webapp-*.jar
       pom_file: source-code/pom.xml
+    get_params:
+      skip_download: true
 ```
 
 Retrieve an artifact and push to Cloud Foundry using [cf-resource](https://github.com/concourse/cf-resource)

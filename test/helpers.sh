@@ -201,15 +201,20 @@ get_artifact() {
     local artifact=$2
     local version=$3
     local src=$4
+    local skip_download=$5
 
     jq -n \
     --arg url "$url" \
     --arg artifact "$artifact" \
     --arg version "$version" \
+    --arg skip_download "$skip_download" \
     '{
       source: {
         url: $url,
         artifact: $artifact
+      },
+      params: {
+        skip_download: $skip_download
       },
       version: {
         version: $version
