@@ -105,6 +105,7 @@ if [[ "$skip_download" != "true" ]]; then
 fi
 
 echo "$version" > version
+echo "$artifactItem" > artifact
 
 jq -n \
 --arg version "$version" \
