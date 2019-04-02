@@ -104,8 +104,8 @@ if [[ "$skip_download" != "true" ]]; then
   $resource_dir/mvnw dependency:copy $args
 fi
 
-echo "$version" > version
-echo "$artifactItem" > artifact
+echo "$version" > "$destination/version"
+echo "$artifactItem" > "$destination/artifact"
 
 jq -n \
 --arg version "$version" \
